@@ -1,0 +1,25 @@
+FUNCTION volum :
+PARAM v1
+t10 := v1 + #4
+t2 := *v1 * *t10
+t13 := v1 + #8
+t1 := t2 * *t13
+RETURN t1
+FUNCTION main :
+DEC v2 16
+t17 := &v2 + #12
+READ t15
+*t17 := t15
+t22 := &v2
+*t22 := #3
+t27 := &v2
+t28 := t27 + #4
+*t28 := #4
+t33 := &v2
+t34 := t33 + #8
+*t34 := #5
+ARG v2
+t36 := CALL volum
+v3 := t36
+WRITE v3
+RETURN #0

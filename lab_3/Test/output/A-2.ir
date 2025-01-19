@@ -1,0 +1,117 @@
+
+FUNCTION main :
+vf := #60
+vg := #70
+READ t4
+va := t4
+READ t6
+vb := t6
+READ t8
+vc := t8
+READ t10
+vd := t10
+READ t12
+ve := t12
+IF va < vb GOTO label1
+GOTO label2
+LABEL label1 :
+WRITE va
+LABEL label2 :
+IF vc > vb GOTO label3
+GOTO label4
+LABEL label3 :
+WRITE vb
+GOTO label5
+LABEL label4 :
+WRITE vc
+LABEL label5 :
+IF vd > va GOTO label6
+GOTO label7
+LABEL label6 :
+IF vd > vb GOTO label9
+GOTO label10
+LABEL label9 :
+WRITE vd
+GOTO label11
+LABEL label10 :
+WRITE vb
+LABEL label11 :
+GOTO label8
+LABEL label7 :
+WRITE va
+LABEL label8 :
+IF ve < va GOTO label12
+GOTO label13
+LABEL label12 :
+WRITE #1
+GOTO label14
+LABEL label13 :
+IF ve < vb GOTO label15
+GOTO label16
+LABEL label15 :
+WRITE #3
+GOTO label17
+LABEL label16 :
+IF ve < vc GOTO label18
+GOTO label19
+LABEL label18 :
+WRITE #5
+GOTO label20
+LABEL label19 :
+IF ve < vd GOTO label21
+GOTO label22
+LABEL label21 :
+WRITE #7
+GOTO label23
+LABEL label22 :
+WRITE #9
+LABEL label23 :
+LABEL label20 :
+LABEL label17 :
+LABEL label14 :
+t40 := #0
+IF vf > va GOTO label28
+GOTO label29
+LABEL label28 :
+t40 := #1
+LABEL label29 :
+IF t40 != #0 GOTO label27
+GOTO label25
+LABEL label27 :
+t43 := #0
+IF vg < vb GOTO label30
+GOTO label31
+LABEL label30 :
+t43 := #1
+LABEL label31 :
+IF t43 != #0 GOTO label24
+GOTO label25
+LABEL label24 :
+WRITE #2
+GOTO label26
+LABEL label25 :
+t47 := #0
+IF vf > va GOTO label36
+GOTO label37
+LABEL label36 :
+t47 := #1
+LABEL label37 :
+IF t47 != #0 GOTO label32
+GOTO label35
+LABEL label35 :
+t50 := #0
+IF vg < vb GOTO label38
+GOTO label39
+LABEL label38 :
+t50 := #1
+LABEL label39 :
+IF t50 != #0 GOTO label32
+GOTO label33
+LABEL label32 :
+WRITE #4
+GOTO label34
+LABEL label33 :
+WRITE #6
+LABEL label34 :
+LABEL label26 :
+RETURN #0

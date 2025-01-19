@@ -1,0 +1,29 @@
+
+FUNCTION calculateSum :
+PARAM vstart
+PARAM vend
+vsum := #0
+vi := vstart
+LABEL label1 :
+IF vi <= vend GOTO label2
+GOTO label3
+LABEL label2 :
+t6 := vsum + vi
+vsum := t6
+t10 := vi + #1
+vi := t10
+GOTO label1
+LABEL label3 :
+RETURN vsum
+
+FUNCTION main :
+READ t15
+va := t15
+READ t17
+vb := t17
+ARG vb
+ARG va
+t19 := CALL calculateSum
+vresult := t19
+WRITE vresult
+RETURN #0

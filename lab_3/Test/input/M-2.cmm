@@ -1,0 +1,17 @@
+struct Node {
+    int a;
+    int b;
+};
+
+int func(struct Node n, int c){
+    return n.b + c;
+}
+
+int main(){
+    struct Node node;
+    node.a = 1;
+    node.b = 2;
+    node.a = func(node, 3);
+    write(node.b);
+    return 0;
+}

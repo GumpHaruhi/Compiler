@@ -1,0 +1,63 @@
+FUNCTION cal_sum :
+PARAM v1
+PARAM v2
+PARAM v3
+t2 := v1 + v2
+t1 := t2 + v3
+v4 := t1
+RETURN v4
+FUNCTION mod :
+PARAM v5
+PARAM v6
+t10 := v5 / v6
+t9 := t10 * v6
+t7 := v5 - t9
+v7 := t7
+RETURN v7
+FUNCTION is_good :
+PARAM v8
+t15 := v8 * #2
+v9 := t15
+t18 := v8 + #2
+v10 := t18
+t21 := v8 * v8
+v11 := t21
+ARG v11
+ARG v10
+ARG v9
+t24 := CALL cal_sum
+v12 := t24
+ARG #5
+ARG v12
+t28 := CALL mod
+v13 := t28
+IF v13 > #1 GOTO label1
+GOTO label2
+LABEL label1 :
+RETURN #1
+GOTO label3
+LABEL label2 :
+RETURN #0
+LABEL label3 :
+FUNCTION main :
+READ t36
+v14 := t36
+READ t38
+v15 := t38
+READ t40
+v16 := t40
+ARG v14
+t41 := CALL is_good
+IF t41 != #0 GOTO label4
+GOTO label5
+LABEL label4 :
+ARG v16
+ARG v15
+ARG v14
+t43 := CALL cal_sum
+WRITE t43
+GOTO label6
+LABEL label5 :
+WRITE #0
+LABEL label6 :
+RETURN #0

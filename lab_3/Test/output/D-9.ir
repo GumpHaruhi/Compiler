@@ -1,0 +1,249 @@
+FUNCTION mod :
+PARAM v1
+PARAM v2
+t4 := v1 / v2
+t3 := t4 * v2
+t1 := v1 - t3
+RETURN t1
+FUNCTION do_work :
+PARAM v3
+ARG #5
+ARG v3
+t9 := CALL mod
+v3 := t9
+t13 := #2 * v3
+v4 := t13
+t17 := v3 + v3
+v5 := t17
+t21 := #4 * #4
+v6 := t21
+t26 := v6 + v5
+t25 := t26 + v4
+v4 := t25
+t36 := v4 + #1
+t37 := v5 + #1
+t34 := t36 * t37
+t35 := v6 + #1
+t33 := t34 * t35
+t31 := v4 + t33
+v5 := t31
+t51 := v4 + #1
+t48 := v4 * t51
+t54 := v5 + #1
+t55 := v5 + #1
+t49 := t54 * t55
+t46 := t48 + t49
+t60 := v6 + #1
+t61 := v6 + #1
+t47 := t60 * t61
+t45 := t46 + t47
+v6 := t45
+t70 := v4 + #1
+t71 := v5 + #1
+t68 := t70 + t71
+t69 := v6 + #1
+t67 := t68 + t69
+v4 := t67
+t79 := v4 + v5
+t78 := t79 + v6
+RETURN t78
+FUNCTION main :
+v7 := #2
+v8 := #5
+v9 := #10
+t90 := v8 * v9
+t87 := #3 * t90
+t88 := #100 / #5
+t86 := t87 - t88
+v10 := t86
+t100 := v7 * v8
+t107 := v8 * v9
+t104 := v7 * t107
+t101 := t104 / #32
+t99 := t100 * t101
+t96 := #42 - t99
+t95 := t96 + #100
+v11 := t95
+t125 := #3 * #4
+t123 := t125 * #5
+t121 := t123 - #10
+t130 := v7 * v8
+t129 := t130 * #3
+t122 := #0 - t129
+t119 := t121 - t122
+t120 := v7 * v8
+t117 := t119 - t120
+t118 := v7 * v8
+t115 := t117 - t118
+t113 := t115 + #3
+t111 := t113 + #2
+t110 := t111 + #1
+v12 := t110
+v13 := #0
+v14 := #0
+t140 := v7 * v8
+v15 := t140
+DEC v16 40
+DEC v17 40
+LABEL label1 :
+IF v13 < v12 GOTO label2
+GOTO label3
+LABEL label2 :
+t146 := v14 + #1
+v14 := t146
+ARG v15
+ARG v13
+t152 := CALL mod
+t153 := t152 * #4
+t157 := &v16
+t156 := t157 + t153
+*t156 := v10
+t159 := v10 + #1
+v10 := t159
+t163 := v13 + #1
+v13 := t163
+GOTO label1
+LABEL label3 :
+v13 := #0
+LABEL label4 :
+IF v13 < #100 GOTO label5
+GOTO label6
+LABEL label5 :
+ARG v15
+ARG v13
+t173 := CALL mod
+t174 := t173 * #4
+t178 := &v17
+t177 := t178 + t174
+*t177 := v10
+t180 := v10 + #1
+v10 := t180
+t184 := v13 + #1
+v13 := t184
+GOTO label4
+LABEL label6 :
+v13 := #0
+LABEL label7 :
+ARG #10
+t191 := CALL do_work
+ARG #30
+ARG t191
+t190 := CALL mod
+IF v13 < t190 GOTO label8
+GOTO label9
+LABEL label8 :
+ARG v15
+ARG v13
+t197 := CALL mod
+t198 := t197 * #4
+t202 := &v16
+t201 := t202 + t198
+v11 := *t201
+t209 := #0 - #1
+t208 := t209 * v13
+t205 := v14 + t208
+ARG v11
+t206 := CALL do_work
+t204 := t205 + t206
+v14 := t204
+t216 := #2 * v13
+t214 := v11 + t216
+v11 := t214
+t222 := #2 * v13
+t220 := v11 + t222
+v11 := t220
+t228 := #2 * v13
+t226 := v11 + t228
+v11 := t226
+ARG #10
+t233 := CALL do_work
+ARG #10
+ARG t233
+t231 := CALL mod
+ARG v11
+t236 := CALL do_work
+ARG #10
+ARG t236
+t232 := CALL mod
+IF t231 == t232 GOTO label10
+GOTO label11
+LABEL label10 :
+ARG #10
+ARG v11
+t240 := CALL mod
+v11 := t240
+GOTO label12
+LABEL label11 :
+ARG #20
+ARG v11
+t244 := CALL mod
+v11 := t244
+LABEL label12 :
+ARG v15
+ARG v13
+t250 := CALL mod
+t251 := t250 * #4
+t255 := &v16
+t254 := t255 + t251
+t248 := v11 * v11
+*t254 := t248
+t259 := v13 + #1
+v13 := t259
+GOTO label7
+LABEL label9 :
+t271 := &v16
+t272 := *t271
+t264 := v11 + t272
+t275 := #1 * #4
+t277 := &v16
+t276 := t277 + t275
+t278 := *t276
+t263 := t264 + t278
+v11 := t263
+t288 := &v16
+t289 := *t288
+t281 := v11 + t289
+t292 := #1 * #4
+t294 := &v16
+t293 := t294 + t292
+t295 := *t293
+t280 := t281 + t295
+v11 := t280
+t305 := &v16
+t306 := *t305
+t298 := v11 + t306
+t309 := #1 * #4
+t311 := &v16
+t310 := t311 + t309
+t312 := *t310
+t297 := t298 + t312
+v11 := t297
+t322 := &v16
+t323 := *t322
+t315 := v11 + t323
+t326 := #1 * #4
+t328 := &v16
+t327 := t328 + t326
+t329 := *t327
+t314 := t315 + t329
+v11 := t314
+WRITE v11
+t335 := &v16
+WRITE *t335
+t339 := #1 * #4
+t341 := &v16
+t340 := t341 + t339
+WRITE *t340
+t345 := #2 * #4
+t347 := &v16
+t346 := t347 + t345
+WRITE *t346
+t351 := #3 * #4
+t353 := &v16
+t352 := t353 + t351
+WRITE *t352
+t357 := #4 * #4
+t359 := &v16
+t358 := t359 + t357
+WRITE *t358
+RETURN #0

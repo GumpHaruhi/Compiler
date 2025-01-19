@@ -1,0 +1,5 @@
+Error type B at Line 2: Syntax error near 'b1010'
+Error type B at Line 5: Syntax error near '!'
+Error type B at Line 8: Syntax error near ','
+Error type B at Line 11: Syntax error near ';'
+Error type B at Line 15: Syntax error near ';'

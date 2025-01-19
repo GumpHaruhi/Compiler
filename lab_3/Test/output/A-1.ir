@@ -1,0 +1,38 @@
+
+FUNCTION main :
+va := #10
+vb := #20
+t4 := va + vb
+vc := t4
+t8 := vb - va
+vd := t8
+t12 := va * vb
+ve := t12
+t16 := vb / va
+vf := t16
+t21 := vb + va
+t22 := vb - va
+t20 := t21 * t22
+vg := t20
+t29 := va + vb
+t30 := vc - vd
+t28 := t29 * t30
+vh := t28
+t38 := vf + vg
+t36 := ve / t38
+vi := t36
+t45 := va * vb
+t46 := vc / vd
+t43 := t45 + t46
+t44 := ve + vf
+t42 := t43 - t44
+vj := t42
+WRITE vc
+WRITE vd
+WRITE ve
+WRITE vf
+WRITE vg
+WRITE vh
+WRITE vi
+WRITE vj
+RETURN #0

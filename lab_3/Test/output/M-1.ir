@@ -1,0 +1,34 @@
+
+FUNCTION func :
+PARAM vpos
+t31 := *vpos
+IF t31 == #0 GOTO label1
+GOTO label3
+LABEL label3 :
+t7 := vpos + #4
+t32 := *t7
+IF t32 == #0 GOTO label1
+GOTO label2
+LABEL label1 :
+t13 := vpos + #4
+t15 := *t13
+t14 := *vpos
+t8 := t14 + t15
+RETURN t8
+LABEL label2 :
+t18 := vpos + #4
+t33 := *t18
+RETURN t33
+
+FUNCTION main :
+DEC vp 8
+READ t20
+*vpos := t20
+t25 := vpos + #4
+READ t23
+*t25 := t23
+ARG &vp
+t27 := CALL func
+vn := t27
+WRITE vn
+RETURN #0

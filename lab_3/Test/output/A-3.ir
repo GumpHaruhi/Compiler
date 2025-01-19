@@ -1,0 +1,36 @@
+
+FUNCTION main :
+DEC varr 40
+vresult := #0
+vi := #0
+LABEL label1 :
+IF vi < #10 GOTO label2
+GOTO label3
+LABEL label2 :
+t10 := vi * #4
+t11 := &varr + t10
+t7 := vi * vi
+*t11 := t7
+t15 := vi + #1
+vi := t15
+GOTO label1
+LABEL label3 :
+READ t19
+vstart := t19
+READ t21
+vend := t21
+vi := vstart
+LABEL label4 :
+IF vi <= vend GOTO label5
+GOTO label6
+LABEL label5 :
+t32 := vi * #4
+t33 := &varr + t32
+t27 := vresult + *t33
+vresult := t27
+t35 := vi + #1
+vi := t35
+GOTO label4
+LABEL label6 :
+WRITE vresult
+RETURN #0

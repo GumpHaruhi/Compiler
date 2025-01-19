@@ -1,0 +1,115 @@
+
+FUNCTION compare :
+PARAM vp1
+PARAM vp2
+t138 := *vp1
+t139 := *vp2
+IF t138 > t139 GOTO label1
+GOTO label2
+LABEL label1 :
+RETURN #1
+LABEL label2 :
+RETURN #0
+
+FUNCTION sum_score :
+PARAM vteam
+PARAM vnum
+vi := #0
+vsum := #0
+t140 := *vteam
+IF vnum > t140 GOTO label3
+GOTO label4
+LABEL label3 :
+WRITE vnum
+WRITE *vteam
+t15 := #0 - #1
+RETURN t15
+LABEL label4 :
+LABEL label5 :
+IF vi < vnum GOTO label6
+GOTO label7
+LABEL label6 :
+t28 := vteam + #8
+t26 := vi * #8
+t29 := t28 + t26
+t30 := t29 + #4
+t31 := *t30
+t20 := vsum + t31
+vsum := t20
+t33 := vi + #1
+vi := t33
+GOTO label5
+LABEL label7 :
+RETURN vsum
+
+FUNCTION main :
+DEC vteams 144
+vj := #0
+vk := #0
+LABEL label8 :
+IF vj < #3 GOTO label9
+GOTO label10
+LABEL label9 :
+t46 := vj * #48
+t48 := &vteams
+t47 := t48 + t46
+t49 := t47 + #4
+t42 := vj + #1
+*t49 := t42
+t57 := vj * #48
+t59 := &vteams
+t58 := t59 + t57
+READ t53
+*t58 := t53
+vk := #0
+LABEL label11 :
+t67 := vj * #48
+t69 := &vteams
+t68 := t69 + t67
+t141 := *t68
+IF vk < t141 GOTO label12
+GOTO label13
+LABEL label12 :
+t79 := vj * #48
+t81 := &vteams
+t80 := t81 + t79
+t82 := t80 + #8
+t75 := vk * #8
+t83 := t82 + t75
+t71 := vk + #1
+*t83 := t71
+t95 := vj * #48
+t97 := &vteams
+t96 := t97 + t95
+t98 := t96 + #8
+t91 := vk * #8
+t99 := t98 + t91
+t100 := t99 + #4
+READ t87
+*t100 := t87
+t102 := vk + #1
+vk := t102
+GOTO label11
+LABEL label13 :
+t106 := vj + #1
+vj := t106
+GOTO label8
+LABEL label10 :
+t114 := &vteams
+WRITE *t114
+t119 := #1 * #48
+t121 := &vteams
+t120 := t121 + t119
+WRITE *t120
+t126 := #2 * #48
+t128 := &vteams
+t127 := t128 + t126
+WRITE *t127
+t133 := #2 * #48
+t135 := &vteams
+t134 := t135 + t133
+ARG #3
+ARG t134
+t129 := CALL sum_score
+WRITE t129
+RETURN #0

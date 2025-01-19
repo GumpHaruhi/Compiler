@@ -1,0 +1,23 @@
+
+FUNCTION multiplyNumbers :
+PARAM vn
+IF vn >= #1 GOTO label1
+GOTO label2
+LABEL label1 :
+t6 := vn - #1
+ARG t6
+t5 := CALL multiplyNumbers
+t3 := vn * t5
+RETURN t3
+GOTO label3
+LABEL label2 :
+RETURN #1
+LABEL label3 :
+
+FUNCTION main :
+READ t11
+vx := t11
+ARG vx
+t12 := CALL multiplyNumbers
+WRITE t12
+RETURN #0

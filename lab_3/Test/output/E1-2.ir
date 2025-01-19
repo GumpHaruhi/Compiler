@@ -1,0 +1,33 @@
+FUNCTION calculateArea :
+PARAM v1
+t6 := v1 + #4
+t8 := *t6
+t7 := *v1
+t1 := t7 * t8
+RETURN t1
+FUNCTION main :
+v2 := #0
+DEC v3 8
+READ t11
+v4 := t11
+LABEL label1 :
+IF v4 > #0 GOTO label2
+GOTO label3
+LABEL label2 :
+t17 := &v3
+READ t15
+*t17 := t15
+t22 := &v3
+t21 := t22 + #4
+READ t19
+*t21 := t19
+ARG &v3
+t26 := CALL calculateArea
+t24 := v2 + t26
+v2 := t24
+t29 := v4 - #1
+v4 := t29
+GOTO label1
+LABEL label3 :
+WRITE v2
+RETURN #0

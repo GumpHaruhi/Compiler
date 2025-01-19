@@ -1,0 +1,21 @@
+struct Index{
+    int x;
+    int y;
+};
+
+int func(struct Index pos){
+    if(pos.x == 0 || pos.y == 0){
+        return pos.x + pos.y;
+    }
+    return pos.y;
+}
+
+int main(){
+    struct Index p;
+    int n;
+    pos.x = read();
+    pos.y = read();
+    n = func(p);
+    write(n);
+    return 0;
+}

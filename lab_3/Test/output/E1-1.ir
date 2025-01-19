@@ -1,0 +1,31 @@
+FUNCTION main :
+DEC v1 8
+DEC v2 8
+t4 := &v1
+READ t2
+*t4 := t2
+t9 := &v1
+t8 := t9 + #4
+READ t6
+*t8 := t6
+t14 := &v2
+t13 := t14 + #4
+t16 := &v1
+t39 := *t16
+*t13 := t39
+t20 := &v2
+t23 := &v1
+t22 := t23 + #4
+t40 := *t22
+*t20 := t40
+t26 := &v1
+WRITE *t26
+t30 := &v1
+t29 := t30 + #4
+WRITE *t29
+t33 := &v2
+WRITE *t33
+t37 := &v2
+t36 := t37 + #4
+WRITE *t36
+RETURN #0

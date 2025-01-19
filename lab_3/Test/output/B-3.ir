@@ -1,0 +1,63 @@
+
+FUNCTION main :
+DEC va 40
+DEC vb 40
+DEC vc 40
+READ t2
+vn := t2
+vi := #0
+LABEL label1 :
+IF vi < vn GOTO label2
+GOTO label3
+LABEL label2 :
+t11 := vi * #4
+t12 := &va + t11
+READ t8
+*t12 := t8
+t14 := vi + #1
+vi := t14
+GOTO label1
+LABEL label3 :
+vi := #0
+LABEL label4 :
+IF vi < vn GOTO label5
+GOTO label6
+LABEL label5 :
+t25 := vi * #4
+t26 := &vb + t25
+READ t22
+*t26 := t22
+t28 := vi + #1
+vi := t28
+GOTO label4
+LABEL label6 :
+vi := #0
+LABEL label7 :
+IF vi < vn GOTO label8
+GOTO label9
+LABEL label8 :
+t39 := vi * #4
+t40 := &vc + t39
+t45 := vi * #4
+t46 := &va + t45
+t49 := vi * #4
+t50 := &vb + t49
+t36 := *t46 * *t50
+*t40 := t36
+t52 := vi + #1
+vi := t52
+GOTO label7
+LABEL label9 :
+vi := #0
+LABEL label10 :
+IF vi < vn GOTO label11
+GOTO label12
+LABEL label11 :
+t62 := vi * #4
+t63 := &vc + t62
+WRITE *t63
+t65 := vi + #1
+vi := t65
+GOTO label10
+LABEL label12 :
+RETURN #0

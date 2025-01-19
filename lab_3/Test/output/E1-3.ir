@@ -1,0 +1,66 @@
+FUNCTION calculateCircleArea :
+PARAM v1
+t7 := v1 + #8
+t8 := *t7
+t2 := #3 * t8
+t10 := v1 + #8
+t11 := *t10
+t1 := t2 * t11
+RETURN t1
+FUNCTION sumOfAreasPlusDistanceSquared :
+PARAM v2
+PARAM v3
+ARG v2
+t12 := CALL calculateCircleArea
+v4 := t12
+ARG v3
+t14 := CALL calculateCircleArea
+v5 := t14
+t16 := v4 + v5
+v6 := t16
+t27 := *v3
+t26 := *v2
+t19 := t26 - t27
+v7 := t19
+t33 := v2 + #4
+t36 := v3 + #4
+t38 := *t36
+t37 := *t33
+t28 := t37 - t38
+v8 := t28
+t40 := v7 * v7
+t41 := v8 * v8
+t39 := t40 + t41
+v9 := t39
+t46 := v6 + v9
+RETURN t46
+FUNCTION main :
+DEC v10 12
+DEC v11 12
+t53 := &v10
+READ t50
+*t53 := t50
+t58 := &v10
+t59 := t58 + #4
+READ t55
+*t59 := t55
+t64 := &v10
+t63 := t64 + #8
+READ t61
+*t63 := t61
+t69 := &v11
+READ t66
+*t69 := t66
+t74 := &v11
+t75 := t74 + #4
+READ t71
+*t75 := t71
+t80 := &v11
+t79 := t80 + #8
+READ t77
+*t79 := t77
+ARG &v11
+ARG &v10
+t81 := CALL sumOfAreasPlusDistanceSquared
+WRITE t81
+RETURN #0

@@ -1,0 +1,94 @@
+
+FUNCTION binaryToDecimal :
+PARAM vbinary
+vdecimal := #0
+vmultiplier := #1
+LABEL label1 :
+IF vbinary != #0 GOTO label2
+GOTO label3
+LABEL label2 :
+t13 := vbinary / #10
+t12 := t13 * #10
+t9 := vbinary - t12
+t8 := t9 * vmultiplier
+t6 := vdecimal + t8
+vdecimal := t6
+t18 := vbinary / #10
+vbinary := t18
+t22 := vmultiplier * #2
+vmultiplier := t22
+GOTO label1
+LABEL label3 :
+RETURN vdecimal
+
+FUNCTION calculate_power :
+PARAM vbase
+PARAM vpower
+vi := #0
+vresult := #1
+LABEL label4 :
+IF vi < vpower GOTO label5
+GOTO label6
+LABEL label5 :
+t31 := vresult * vbase
+vresult := t31
+t35 := vi + #1
+vi := t35
+GOTO label4
+LABEL label6 :
+RETURN vresult
+
+FUNCTION decimal_to_binary :
+PARAM vd
+vdigitCount := #1
+t40 := vdigitCount - #1
+vj := t40
+vtemp := vd
+LABEL label7 :
+IF vtemp >= #2 GOTO label8
+GOTO label9
+LABEL label8 :
+t47 := vtemp / #2
+vtemp := t47
+t51 := vdigitCount + #1
+vdigitCount := t51
+GOTO label7
+LABEL label9 :
+LABEL label10 :
+IF vj >= #0 GOTO label11
+GOTO label12
+LABEL label11 :
+ARG vj
+ARG #2
+t57 := CALL calculate_power
+IF vd >= t57 GOTO label13
+GOTO label14
+LABEL label13 :
+WRITE #1
+ARG vj
+ARG #2
+t64 := CALL calculate_power
+t62 := vd - t64
+vd := t62
+GOTO label15
+LABEL label14 :
+WRITE #0
+LABEL label15 :
+t69 := vj - #1
+vj := t69
+GOTO label10
+LABEL label12 :
+RETURN #0
+
+FUNCTION main :
+READ t74
+vbin := t74
+ARG vbin
+t76 := CALL binaryToDecimal
+vdec := t76
+WRITE vdec
+READ t80
+vdec := t80
+ARG vdec
+null := CALL decimal_to_binary
+RETURN #0

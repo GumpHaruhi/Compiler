@@ -1,0 +1,25 @@
+
+FUNCTION func :
+PARAM vn
+PARAM vc
+t5 := vn + #4
+t6 := *t5
+t1 := t6 + vc
+RETURN t1
+
+FUNCTION main :
+DEC vnode 8
+t10 := &vnode
+*t10 := #1
+t15 := &vnode
+t14 := t15 + #4
+*t14 := #2
+t19 := &vnode
+ARG #3
+ARG &vnode
+t17 := CALL func
+*t19 := t17
+t25 := &vnode
+t24 := t25 + #4
+WRITE *t24
+RETURN #0

@@ -1,0 +1,157 @@
+
+FUNCTION dot :
+PARAM v1
+PARAM v2
+t11 := *v2
+t10 := *v1
+t4 := t10 * t11
+t15 := v1 + #4
+t17 := v2 + #4
+t19 := *t17
+t18 := *t15
+t5 := t18 * t19
+t2 := t4 + t5
+t23 := v1 + #8
+t25 := v2 + #8
+t27 := *t25
+t26 := *t23
+t3 := t26 * t27
+t1 := t2 + t3
+RETURN t1
+
+FUNCTION sqrt :
+PARAM v3
+v4 := #0
+LABEL label1 :
+IF v4 <= v3 GOTO label2
+GOTO label3
+LABEL label2 :
+t31 := v4 * v4
+v5 := t31
+t35 := v4 + #1
+t36 := v4 + #1
+t34 := t35 * t36
+v6 := t34
+t41 := #0
+IF v3 >= v5 GOTO label7
+GOTO label8
+LABEL label7 :
+t41 := #1
+LABEL label8 :
+IF t41 != #0 GOTO label6
+GOTO label5
+LABEL label6 :
+t44 := #0
+IF v3 < v6 GOTO label9
+GOTO label10
+LABEL label9 :
+t44 := #1
+LABEL label10 :
+IF t44 != #0 GOTO label4
+GOTO label5
+LABEL label4 :
+RETURN v4
+LABEL label5 :
+t49 := v4 + #1
+v4 := t49
+GOTO label1
+LABEL label3 :
+t52 := #0 - #1
+RETURN t52
+
+FUNCTION dist :
+PARAM v7
+PARAM v8
+ARG v8
+ARG v7
+t55 := CALL dot
+ARG t55
+t54 := CALL sqrt
+RETURN t54
+
+FUNCTION main :
+DEC v9 12
+v10 := #0
+v11 := #0
+LABEL label11 :
+IF v10 < #3 GOTO label12
+GOTO label13
+LABEL label12 :
+v11 := #0
+LABEL label14 :
+IF v11 < #3 GOTO label15
+GOTO label16
+LABEL label15 :
+t75 := v10 * #4
+t77 := &v9
+t76 := t77 + t75
+t78 := t76 + #4
+t71 := v11 * #12
+t79 := t78 + t71
+t80 := v11 * v10
+t67 := t80 + v11
+*t79 := t67
+t93 := v10 * #4
+t95 := &v9
+t94 := t95 + t93
+t96 := t94 + #4
+t89 := v11 * #12
+t97 := t96 + t89
+t98 := t97 + #4
+t101 := v11 * v10
+t99 := t101 * v10
+t85 := t99 + v11
+*t98 := t85
+t114 := v10 * #4
+t116 := &v9
+t115 := t116 + t114
+t117 := t115 + #4
+t110 := v11 * #12
+t118 := t117 + t110
+t119 := t118 + #8
+t124 := v11 * v11
+t122 := t124 * v10
+t120 := t122 * v10
+t106 := t120 + v11
+*t119 := t106
+t129 := v11 + #1
+v11 := t129
+GOTO label14
+LABEL label16 :
+t137 := v10 * #4
+t139 := &v9
+t138 := t139 + t137
+t147 := v10 * #4
+t149 := &v9
+t148 := t149 + t147
+t150 := t148 + #4
+t143 := #1 * #12
+t151 := t150 + t143
+t159 := v10 * #4
+t161 := &v9
+t160 := t161 + t159
+t162 := t160 + #4
+t155 := #2 * #12
+t163 := t162 + t155
+ARG &*t163
+ARG &*t151
+t133 := CALL dist
+*t138 := t133
+t165 := v10 + #1
+v10 := t165
+GOTO label11
+LABEL label13 :
+t177 := &v9
+t181 := #1 * #4
+t183 := &v9
+t182 := t183 + t181
+t185 := *t182
+t184 := *t177
+t169 := t184 + t185
+t189 := #2 * #4
+t191 := &v9
+t190 := t191 + t189
+t192 := *t190
+t168 := t169 + t192
+WRITE t168
+RETURN #0

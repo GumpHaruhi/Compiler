@@ -1,0 +1,28 @@
+// 结构体是另一个结构体的成员
+struct Size{
+    int width;
+    int length;
+    int height;
+};
+
+struct Box{
+    struct Size b_size;
+    int color;
+};
+
+int volum(struct Box box){
+    return box.b_size.width * box.b_size.length * box.b_size.height;
+}
+
+int main(){
+    struct Box obj;
+    int v;
+    obj.color = read();
+    obj.b_size.width = 3;
+    obj.b_size.length = 4;
+    obj.b_size.height = 5;
+    v = volum(obj);
+    write(obj.color);
+    write(v);
+    return 0;
+}

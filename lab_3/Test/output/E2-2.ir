@@ -1,0 +1,52 @@
+
+FUNCTION maxSumarray :
+PARAM va
+PARAM vs
+vj := #0
+vmax_sum_so_far := #0
+vmax_ending_here := #0
+LABEL label1 :
+IF vj < vs GOTO label2
+GOTO label3
+LABEL label2 :
+t12 := vj * #4
+t13 := va + t12
+t7 := vmax_ending_here + *t13
+vmax_ending_here := t7
+IF vmax_ending_here < #0 GOTO label4
+GOTO label5
+LABEL label4 :
+vmax_ending_here := #0
+LABEL label5 :
+IF vmax_sum_so_far < vmax_ending_here GOTO label6
+GOTO label7
+LABEL label6 :
+vmax_sum_so_far := vmax_ending_here
+LABEL label7 :
+t23 := vj + #1
+vj := t23
+GOTO label1
+LABEL label3 :
+RETURN vmax_sum_so_far
+
+FUNCTION main :
+vi := #0
+vsize := #10
+DEC varr 40
+LABEL label8 :
+IF vi < vsize GOTO label9
+GOTO label10
+LABEL label9 :
+t35 := vi * #4
+t36 := &varr + t35
+READ t32
+*t36 := t32
+t38 := vi + #1
+vi := t38
+GOTO label8
+LABEL label10 :
+ARG vsize
+ARG &varr
+t41 := CALL maxSumarray
+WRITE t41
+RETURN #0

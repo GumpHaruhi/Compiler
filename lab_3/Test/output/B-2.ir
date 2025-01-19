@@ -1,0 +1,50 @@
+
+FUNCTION sumOfDigits :
+PARAM vnum
+vsum := #0
+LABEL label1 :
+IF vnum > #0 GOTO label2
+GOTO label3
+LABEL label2 :
+t8 := vnum / #10
+t7 := t8 * #10
+t5 := vnum - t7
+vdigit := t5
+t13 := vsum + vdigit
+vsum := t13
+t17 := vnum / #10
+vnum := t17
+GOTO label1
+LABEL label3 :
+RETURN vsum
+
+FUNCTION sumOfSumsOfDigits :
+PARAM vs
+PARAM ve
+vtotalSum := #0
+vi := vs
+LABEL label4 :
+IF vi <= ve GOTO label5
+GOTO label6
+LABEL label5 :
+ARG vi
+t28 := CALL sumOfDigits
+t26 := vtotalSum + t28
+vtotalSum := t26
+t31 := vi + #1
+vi := t31
+GOTO label4
+LABEL label6 :
+RETURN vtotalSum
+
+FUNCTION main :
+READ t36
+vstart := t36
+READ t38
+vend := t38
+ARG vend
+ARG vstart
+t40 := CALL sumOfSumsOfDigits
+vresult := t40
+WRITE vresult
+RETURN #0

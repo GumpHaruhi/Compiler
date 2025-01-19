@@ -1,0 +1,92 @@
+FUNCTION min :
+PARAM v1
+PARAM v2
+IF v1 <= v2 GOTO label1
+GOTO label2
+LABEL label1 :
+RETURN v1
+GOTO label3
+LABEL label2 :
+RETURN v2
+LABEL label3 :
+FUNCTION jumpSearch :
+DEC v3 64
+v4 := #16
+v5 := #4
+v6 := #0
+v7 := #0
+LABEL label4 :
+IF v6 < #16 GOTO label5
+GOTO label6
+LABEL label5 :
+t15 := v6 * #4
+t17 := &v3
+t16 := t17 + t15
+READ t12
+*t16 := t12
+t19 := v6 + #1
+v6 := t19
+GOTO label4
+LABEL label6 :
+READ t23
+v8 := t23
+LABEL label7 :
+ARG v4
+ARG v5
+t29 := CALL min
+t27 := t29 - #1
+t28 := t27 * #4
+t34 := &v3
+t33 := t34 + t28
+t75 := *t33
+IF t75 < v8 GOTO label8
+GOTO label9
+LABEL label8 :
+v7 := v5
+t38 := v5 + #4
+v5 := t38
+IF v7 >= v4 GOTO label10
+GOTO label11
+LABEL label10 :
+t43 := #0 - #1
+RETURN t43
+LABEL label11 :
+GOTO label7
+LABEL label9 :
+LABEL label12 :
+t49 := v7 * #4
+t51 := &v3
+t50 := t51 + t49
+t76 := *t50
+IF t76 < v8 GOTO label13
+GOTO label14
+LABEL label13 :
+t53 := v7 + #1
+v7 := t53
+ARG v4
+ARG v5
+t57 := CALL min
+IF v7 == t57 GOTO label15
+GOTO label16
+LABEL label15 :
+t60 := #0 - #1
+RETURN t60
+LABEL label16 :
+GOTO label12
+LABEL label14 :
+t66 := v7 * #4
+t68 := &v3
+t67 := t68 + t66
+t77 := *t67
+IF t77 == v8 GOTO label17
+GOTO label18
+LABEL label17 :
+RETURN v7
+LABEL label18 :
+t70 := #0 - #1
+RETURN t70
+FUNCTION main :
+t72 := CALL jumpSearch
+v9 := t72
+WRITE v9
+RETURN #0
